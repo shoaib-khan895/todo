@@ -26,25 +26,32 @@ class AddTodo extends Component {
         <TextInput
           onChangeText={text => this.setState({text})}
           value={this.state.text}
-          placeholder="enter todo"
+          placeholder="Enter todo . . . . . ."
           style={{
             borderWidth: 1,
-            borderColor: '#f2f2e1',
+            borderColor: 'black',
             backgroundColor: '#eaeaea',
             height: 50,
             flex: 1,
             padding: 5,
           }}
         />
-        <TouchableOpacity onPress={() => this.addTodo(this.state.text)}>
+        <TouchableOpacity
+          
+          onPress={() => this.addTodo(this.state.text)}>
           <View
             style={{
+              marginStart: 5,
               height: 50,
-              backgroundColor: '#eaeaea',
+              width: 50,
+              backgroundColor: '#feeaea',
               alignItems: 'center',
               justifyContent: 'center',
+              borderRadius: 1,
+              borderColor: 'black',
+            
             }}>
-            <Text style={{fontSize:25}}>+</Text>
+            <Text style={{fontSize: 25,color:'black'}}>+</Text>
           </View>
         </TouchableOpacity>
       </View>

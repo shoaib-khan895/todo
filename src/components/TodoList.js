@@ -1,14 +1,16 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
+import todos from '../reducers/todo';
 
 const TodoList = ({todos, toggleTodo}) => (
-  <View style={{padding: 20}}>
+  <View style={{paddingStart: 10,justifyContent:'center',alignItems:'center'}}>
     {todos.map(todo => (
-      <TouchableOpacity key={todo.id} onPress={() => toggleTodo(todo.id)}>
+      <TouchableOpacity style={{backgroundColor:'white',marginTop:10,padding:5,borderRadius:5}}
+      key={todo.id} onPress={() => toggleTodo(todo.id)}>
         <Text
           style={{
             fontSize: 24,
-            textDecorationLine: todo.completed ? 'line-through' : 'none',
+            textDecorationLine: todo.completed ? 'underline line-through' : 'none',
           }}>
           {todo.text}
         </Text>
